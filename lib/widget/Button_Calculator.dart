@@ -20,7 +20,10 @@ class ButtonCalculator extends StatelessWidget {
         child:
          Text(text,
           style:  const TextStyle(
-              fontSize: 32
+              fontSize: 32,
+            color: Color(0xffFFFFFF),
+            fontWeight: FontWeight.w300,
+            fontFamily: "Inter",
           ),),
         style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll<Color>(Color(0xffE83D67),)
