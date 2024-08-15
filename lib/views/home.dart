@@ -12,8 +12,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   double _hight = 0.0;
+  int wieght=0;
+  int age=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '$_hight',
+                              '${_hight.round()}',
                               style:  TextStyle(
                                 color: Color(0xffFFFFFF),
                                 fontSize: 40,
@@ -105,8 +106,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 10,),
                         Slider(
                           min:0 ,
-                          max: 400,
-                          divisions: 400,
+                          max: 200,
+                          divisions: 200,
                           value: _hight,
                           allowedInteraction: SliderInteraction.tapAndSlide,
                           activeColor: const Color(0xffE83D67),
@@ -117,14 +118,25 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ),],),),),
               const SizedBox(height: 15,),
-              const Expanded(
+               Expanded(
                 child: SizedBox(
                   child: Row(
                     children: [
                       Expanded(
                         child: CountCountainer(
+                          count: wieght,
                           item: 'Weight',
                           color: Color(0xff24263B),
+                          added: () {
+                            wieght++;
+                            setState(() {
+                            });
+                            },
+                          mined: () {
+                            wieght--;
+                            setState(() {
+                            });
+                          },
                         ),
                       ),
                       SizedBox(
@@ -133,8 +145,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       Expanded(
 
                         child: CountCountainer(
+                          count: age,
                           item: 'Age',
                           color: Color(0xff333244),
+                          added: () {
+                            age++;
+                            setState(() {
+                            });
+                          },
+                          mined: () {
+                            age--;
+                            setState(() {
+                            });
+                          },
                         ),
                       ),
 

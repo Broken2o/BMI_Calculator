@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-
 class CountCountainer extends StatefulWidget {
-  const CountCountainer({super.key,required this.item ,required this.color});
+  const CountCountainer({super.key,required this.item ,required this.color ,required this.count ,required this.added, required this.mined });
   final String item;
   final Color color;
+  final Function() added;
+  final Function() mined;
+
+  final int count;
 
   @override
   State<CountCountainer> createState() => _CountCountainerState();
 }
 
 class _CountCountainerState extends State<CountCountainer> {
-  int count=0;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +35,7 @@ class _CountCountainerState extends State<CountCountainer> {
           ),
           const SizedBox(height: 10,),
           Text(
-            '$count',
+            '${widget.count}',
             style:  TextStyle(
               color: Color(0xffFFFFFF),
               fontSize: 40,
@@ -47,10 +48,7 @@ class _CountCountainerState extends State<CountCountainer> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                onPressed: (){
-                  count--;
-                  setState(() {});
-                },
+                onPressed: widget.mined,
                 icon: const Icon(Icons.minimize),
                 style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll<Color>(Color(0xff8B8C9E),)
@@ -58,14 +56,11 @@ class _CountCountainerState extends State<CountCountainer> {
               ),
               const SizedBox(width: 60,),
               IconButton(
-                  onPressed: (){
-                    count++;
-                    setState(() {});
-                    },
                   icon: const Icon(Icons.add_rounded),
                 style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll<Color>(Color(0xff8B8C9E),)
                 ),
+                onPressed: widget.added,
               )
             ],
           )
