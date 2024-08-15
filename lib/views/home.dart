@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  double _value = 0.0;
+  double _hight = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,26 +79,40 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         const SizedBox(height: 10,),
-                        Text(
-                          '$_value cm',
-                          style:  TextStyle(
-                            color: Color(0xffFFFFFF),
-                            fontSize: 40,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: "Inter",
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '$_hight',
+                              style:  TextStyle(
+                                color: Color(0xffFFFFFF),
+                                fontSize: 40,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: "Inter",
+                              ),
                             ),
-                          ),
+                            Text(
+                              'cm',
+                              style:  TextStyle(
+                                color: Color(0xffFFFFFF),
+                                fontSize: 20,
+                                fontFamily: "Inter",
+                              ),
+                            ),
+                          ],
+                        ),
+
                         const SizedBox(height: 10,),
                         Slider(
                           min:0 ,
                           max: 400,
                           divisions: 400,
-                          value: _value,
+                          value: _hight,
                           allowedInteraction: SliderInteraction.tapAndSlide,
                           activeColor: const Color(0xffE83D67),
                           onChanged: (double value) {
                             setState(() {
-                              _value = value;
+                              _hight = value;
                             });
                           },
                         ),],),),),
