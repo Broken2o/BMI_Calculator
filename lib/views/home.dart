@@ -15,6 +15,8 @@ class _HomeScreenState extends State<HomeScreen> {
   double _hight = 0.0;
   int wieght=0;
   int age=0;
+  bool isMale=true;
+  bool isWieght=true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(30.0),
           child: Column(
             children: [
-              const Expanded(
+              Expanded(
                 child: SizedBox(
                   child: Row(
                     children: [
@@ -41,10 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: GenderCountainer(
                           gender: 'Male',
                           path: 'assets/images/male.png',
-                          color: Color(0xff24263B),
+                          isSelected: isMale,
+                          onTap: () {
+                            setState(() {
+                              isMale=true;
+                            });
+                          },
+
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Expanded(
@@ -52,7 +60,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: GenderCountainer(
                           gender: 'Female',
                           path: 'assets/images/famale.png',
-                          color: Color(0xff333244),
+                          isSelected: !isMale,
+                          onTap: () {
+                            setState(() {
+                              isMale=false;
+
+                            });
+                          },
                         ),
                       ),
                     ],
@@ -85,14 +99,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Text(
                               '${_hight.round()}',
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Color(0xffFFFFFF),
                                 fontSize: 40,
                                 fontWeight: FontWeight.w700,
                                 fontFamily: "Inter",
                               ),
                             ),
-                            Text(
+                            const Text(
                               'cm',
                               style:  TextStyle(
                                 color: Color(0xffFFFFFF),
@@ -126,20 +140,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: CountCountainer(
                           count: wieght,
                           item: 'Weight',
-                          color: Color(0xff24263B),
                           added: () {
                             wieght++;
                             setState(() {
                             });
                             },
                           mined: () {
-                            wieght--;
+                            if(wieght>5){
+                              wieght--;
+                              setState(() {
+                              });
+                            }
+
+                          },
+                          isSelected: isWieght,
+                          onTap: () {
                             setState(() {
+                              isWieght=true;
                             });
                           },
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Expanded(
@@ -147,15 +169,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: CountCountainer(
                           count: age,
                           item: 'Age',
-                          color: Color(0xff333244),
                           added: () {
                             age++;
                             setState(() {
                             });
                           },
                           mined: () {
-                            age--;
+                            if(age>1){
+                              age--;
+                              setState(() {
+                              });
+                            }
+
+                          }, isSelected: !isWieght,
+                          onTap: () {
                             setState(() {
+                              isWieght=true;
                             });
                           },
                         ),
