@@ -56,7 +56,7 @@ class _WeightAgeState extends State<WeightAge> {
                       backgroundColor: MaterialStatePropertyAll<Color>(Color(0xff8B8C9E),)
                   ),
                 ),
-                const SizedBox(width: 60,),
+                const SizedBox(width: 40,),
                 IconButton(
                     icon: const Icon(Icons.add_rounded),
                   style: const ButtonStyle(

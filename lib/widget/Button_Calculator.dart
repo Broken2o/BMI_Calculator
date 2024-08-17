@@ -30,7 +30,5 @@ class ButtonCalculator extends StatelessWidget {
                   fontFamily: "Inter",
                 ),),]
             )
-
-
       ),
     );}}

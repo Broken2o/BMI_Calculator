@@ -19,7 +19,7 @@ class _ResultScreenState extends State<ResultScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff24263B),
+        backgroundColor: const Color(0xff333244),
         centerTitle: true,
         title: const Text(
           "BMI Calculator",

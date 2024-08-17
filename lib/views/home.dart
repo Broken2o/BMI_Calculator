@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: const Color(0xff24263B),
+          backgroundColor: const Color(0xff333244),
        centerTitle: true,
       title: const Text(
         "BMI Calculator",
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         color: const Color(0xff1C2135),
         child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
               Expanded(
@@ -205,12 +205,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   classification = "Underweight";
                   description = "You Have A Underweight Body Weight ";
                 }
-                else if (result <26.0)
+                else if (result <25.1)
                 {
                   classification = "Normal";
                   description = "You Have A Normal Body Weight , Good Job";
                 }
-                else if (result <31.0)
+                else if (result <30.1)
                 {
                   classification = "Overweight";
                   description = "You Have A Overweight Body Weight ";
