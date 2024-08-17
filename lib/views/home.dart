@@ -184,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           }, isSelected: !isWeight,
                           onTap: () {
                             setState(() {
-                              isWeight=true;
+                              isWeight=false;
                             });
                           },
                         ),
@@ -197,9 +197,32 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 15,),
               ButtonCalculator(text: "Calculate" ,
               onTap:  (){
+                double result= weight/((_hight.round()/100 )*(_hight.round()/100 ));
+                String classification= "";
+                String description="";
+                if ( result < 18.5)
+                {
+                  classification = "Underweight";
+                  description = "You Have A Underweight Body Weight ";
+                }
+                else if (result <26.0)
+                {
+                  classification = "Normal";
+                  description = "You Have A Normal Body Weight , Good Job";
+                }
+                else if (result <31.0)
+                {
+                  classification = "Overweight";
+                  description = "You Have A Overweight Body Weight ";
+                }
+                else
+                {
+                  classification = "Obesity";
+                  description = "You Have A Obese Body Weight ";
+                }
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ResultScreen()),
+                  MaterialPageRoute(builder: (context) =>  ResultScreen(bmi:result, classification: classification, description: description)),
                 );
               },),
             ],
