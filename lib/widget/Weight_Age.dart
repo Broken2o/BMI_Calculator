@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-class CountCountainer extends StatefulWidget {
-  const CountCountainer({super.key,required this.item ,required this.count ,required this.added, required this.mined, required this.isSelected, required this.onTap });
+class WeightAge extends StatefulWidget {
+  const WeightAge({super.key,required this.item ,required this.count ,required this.onPlus, required this.onMiuns, required this.isSelected, required this.onTap });
   final String item;
-  final Function() added;
-  final Function() mined;
+  final Function() onPlus;
+  final Function() onMiuns;
   final bool isSelected;
   final Function() onTap;
 
   final int count;
 
   @override
-  State<CountCountainer> createState() => _CountCountainerState();
+  State<WeightAge> createState() => _WeightAgeState();
 }
 
-class _CountCountainerState extends State<CountCountainer> {
+class _WeightAgeState extends State<WeightAge> {
   @override
   Widget build(BuildContext context) {
     return  GestureDetector(
@@ -50,7 +50,7 @@ class _CountCountainerState extends State<CountCountainer> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: widget.mined,
+                  onPressed: widget.onMiuns,
                   icon: const Icon(Icons.minimize),
                   style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll<Color>(Color(0xff8B8C9E),)
@@ -62,7 +62,7 @@ class _CountCountainerState extends State<CountCountainer> {
                   style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll<Color>(Color(0xff8B8C9E),)
                   ),
-                  onPressed: widget.added,
+                  onPressed: widget.onPlus,
                 )
               ],
             )

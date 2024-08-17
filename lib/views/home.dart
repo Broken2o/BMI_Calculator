@@ -3,7 +3,7 @@ import 'package:bmi/widget/Button_Calculator.dart';
 import 'package:bmi/widget/gender_countainer.dart';
 import 'package:flutter/material.dart';
 
-import '../widget/Counter_Countainer.dart';
+import '../widget/Weight_Age.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -13,10 +13,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   double _hight = 0.0;
-  int wieght=0;
+  int weight=0;
   int age=0;
   bool isMale=true;
-  bool isWieght=true;
+  bool isWeight=true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,26 +137,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     children: [
                       Expanded(
-                        child: CountCountainer(
-                          count: wieght,
+                        child: WeightAge(
+                          count: weight,
                           item: 'Weight',
-                          added: () {
-                            wieght++;
+                          onPlus: () {
+                            weight++;
                             setState(() {
                             });
                             },
-                          mined: () {
-                            if(wieght>5){
-                              wieght--;
+                          onMiuns: () {
+                            if(weight>5){
+                              weight--;
                               setState(() {
                               });
                             }
 
                           },
-                          isSelected: isWieght,
+                          isSelected: isWeight,
                           onTap: () {
                             setState(() {
-                              isWieght=true;
+                              isWeight=true;
                             });
                           },
                         ),
@@ -166,25 +166,25 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Expanded(
 
-                        child: CountCountainer(
+                        child: WeightAge(
                           count: age,
                           item: 'Age',
-                          added: () {
-                            age++;
+                          onPlus: () {
                             setState(() {
+                              age++;
                             });
                           },
-                          mined: () {
+                          onMiuns: () {
                             if(age>1){
-                              age--;
                               setState(() {
+                                age--;
                               });
                             }
 
-                          }, isSelected: !isWieght,
+                          }, isSelected: !isWeight,
                           onTap: () {
                             setState(() {
-                              isWieght=true;
+                              isWeight=true;
                             });
                           },
                         ),
@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 15,),
               ButtonCalculator(text: "Calculate" ,
-              onPressed:  (){
+              onTap:  (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const ResultScreen()),

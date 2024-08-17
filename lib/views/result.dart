@@ -67,7 +67,7 @@ class ResultScreen extends StatelessWidget {
               const SizedBox(height: 15,),
                ButtonCalculator(
                   text: "Re Calularor",
-                  onPressed: (){
+                  onTap: (){
                     Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) => const HomeScreen()),
