@@ -32,6 +32,7 @@ return GestureDetector(
           style: const TextStyle(
             fontSize: 20,
             color:  Color(0xff888C9E),
+              fontFamily: 'anticSlab'
           ),
   
         )

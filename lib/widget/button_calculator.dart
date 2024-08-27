@@ -27,7 +27,7 @@ class ButtonCalculator extends StatelessWidget {
                   fontSize: 32,
                   color: Color(0xffFFFFFF),
                   fontWeight: FontWeight.w300,
-                  fontFamily: "Inter",
+                  fontFamily: "lobster",
                 ),),]
             )
       ),

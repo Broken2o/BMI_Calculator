@@ -23,7 +23,7 @@ class _ResultScreenState extends State<ResultScreen> {
         centerTitle: true,
         title: const Text(
           "BMI Calculator",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500 ,fontFamily: 'playball'),
 
         ),
       ),
@@ -43,6 +43,7 @@ class _ResultScreenState extends State<ResultScreen> {
                       color: Colors.white,
                       fontSize: 30,
                       fontWeight: FontWeight.w600,
+                        fontFamily: 'anticSlab'
                     ),
                   ),
                 ],
@@ -67,8 +68,9 @@ class _ResultScreenState extends State<ResultScreen> {
                           style: const TextStyle(
                               color: Color(0xff21BF73),
                               fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: "Inter",),
+                            fontWeight: FontWeight.w500,
+                            fontFamily: "lobster",
+                          ),
                         ),
                         const SizedBox(height: 10,),
                         Text(
@@ -77,7 +79,8 @@ class _ResultScreenState extends State<ResultScreen> {
                               color: Colors.white,
                               fontSize: 64,
                             fontWeight: FontWeight.w700,
-                            fontFamily: "Inter",),
+                            fontFamily: "lobster",
+                          ),
                         ),
                         const SizedBox(height: 60,),
                          Text(
@@ -86,7 +89,9 @@ class _ResultScreenState extends State<ResultScreen> {
                           style: const TextStyle(
                               color: Color(0xff8B8C9E),
                               fontSize: 16,
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w400,
+                            fontFamily: "lobster",
+                          ),
                         ),
                       ],
                     ),

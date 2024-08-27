@@ -32,7 +32,7 @@ class _WeightAgeState extends State<WeightAge> {
                 fontSize: 20,
                 color:  Color(0xff888C9E),
                 fontWeight: FontWeight.w300,
-                fontFamily: "Inter",
+                  fontFamily: 'anticSlab'
               ),
             ),
             const SizedBox(height: 10,),
@@ -42,7 +42,7 @@ class _WeightAgeState extends State<WeightAge> {
                 color: Color(0xffFFFFFF),
                 fontSize: 40,
                 fontWeight: FontWeight.w700,
-                fontFamily: "Inter",
+                  fontFamily: 'anticSlab'
               ),
             ),
             const SizedBox(height: 10,),
