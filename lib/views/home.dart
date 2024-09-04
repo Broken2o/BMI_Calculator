@@ -27,10 +27,14 @@ class HomeScreen extends StatelessWidget {
             create: (context) => CounterCubit(),
             child: BlocBuilder<CounterCubit, CounterStates>(
                 builder: (BuildContext context, CounterStates state) {
-              return Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
+              return Column(
                   children: [
+                    Expanded (
+                        child:
+                       Padding(
+                           padding:const EdgeInsets.all(20.0),
+                           child:
+                           Column(children:[
                     Expanded(
                       child: SizedBox(
                         child: Row(
@@ -168,7 +172,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(
                       height: 15,
-                    ),
+                    ),]))),
                     ButtonCalculator(
                       text: "Calculate",
                       onTap: () {
@@ -201,10 +205,11 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                   ],
-                ),
-              );
+                );
+
             }),
           ),
         ));
   }
 }
+
